@@ -117,3 +117,16 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.copyright {
+  border-top: 1px dotted grey;
+  background: #efefef;
+  font-size: small;
+}
+
+.logotipo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: -1rem auto 1rem auto;
+}
