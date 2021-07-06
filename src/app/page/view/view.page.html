@@ -5,7 +5,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-title class="ion-text-center">Erro 404</ion-title>
+    <ion-title class="ion-text-center">Artigo</ion-title>
 
     <ion-icon name="logo-wechat" slot="end"
     size="large" class="ion-margin-end" routerLink="/home" color="danger"></ion-icon>
@@ -15,16 +15,16 @@
 
 <ion-content class="ion-padding-horizontal">
 
-  <h2>Oooops!</h2>
+  <h2>{{ (item | async)?.title }}</h2>
+  <div class="autor-date">
+    Por {{ (item | async)?.author }} em {{ (item | async)?.date | date: 'dd/MM/yyyy, hh:mm' }}.
+  </div>
+  <div [innerHTML]="(item | async)?.text"></div>
 
-  <ion-img src="assets/404error.jpg" alt="Erro 404"></ion-img>
-
-  <p>O conteúdo que você está tentando acessar não pode ser encontrado.</p>
-  <p>Use a navegação para sair dessa enrascada...</p>
   <p>
     <ion-button expand="block" routerLink="/home">
       <ion-icon name="home" slot="start"></ion-icon>
-      Início
+      Voltar para os artigos
     </ion-button>
   </p>
 

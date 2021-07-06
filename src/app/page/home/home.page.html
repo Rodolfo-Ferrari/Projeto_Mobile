@@ -4,14 +4,30 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-      
-    <ion-title class="ion-text-center">Início</ion-title>
-    <ion-icon name="logo-wechat" slot="end" size="large" class="ion-margin-end" routerLink="/home" color="danger"></ion-icon>
+
+    <ion-title class="ion-text-center">Artigos</ion-title>
+
+    <ion-icon name="logo-wechat" slot="end"
+    size="large" class="ion-margin-end" routerLink="/home" color="danger"></ion-icon>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-horizontal">
+<ion-content class="ion-padding-horizontal" *ngIf="items">
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto libero in vitae, ipsam, tempora saepe maiores labore voluptates alias laudantium id voluptatem dolore recusandae error quas magnam! Quos, aut numquam?</p>
+  <p>Artigos recentes primeiro.</p>
+
+    <div *ngFor="let item of items | async">
+
+      <ion-card class="ion-no-margin ion-margin-bottom" routerLink="/view/{{item.id}}">
+        <img src="{{item.thumbnail}}" alt="{{item.thumbnail}} ">
+        <ion-card-header>
+          <ion-card-title>{{item.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content> {{item.resume}}</ion-card-content>
+      </ion-card>
+
+    
+    </div>
 
 </ion-content>
