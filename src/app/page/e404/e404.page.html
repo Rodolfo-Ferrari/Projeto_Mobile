@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">Erro 404</ion-title>
+
+    <ion-thumbnail slot="end" *ngIf="auth.user | async as user; else showLogin">
+      <img src="{{user.photoURL}}" alt="{{user.displayName}}" routerLink="/profile">
+    </ion-thumbnail>
+    <ng-template #showLogin>
+      <ion-thumbnail slot="end">
+        <img src="assets/user.png" alt="logue-se" routerLink="/login">
+      </ion-thumbnail>
+    </ng-template>
+    
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+
+  <h2>Oooops!</h2>
+
+  <ion-img src="assets/404error.jpg" alt="Erro 404"></ion-img>
+
+  <p>O conteúdo que você está tentando acessar não pode ser encontrado.</p>
+  <p>Use a navegação para sair dessa enrascada...</p>
+  <p>
+    <ion-button expand="block" routerLink="/home">
+      <ion-icon name="home" slot="start"></ion-icon>
+      Início
+    </ion-button>
+  </p>
+
+</ion-content>
