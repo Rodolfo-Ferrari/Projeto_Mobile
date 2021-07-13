@@ -7,6 +7,8 @@
 
     <ion-title class="ion-text-center">Sobre</ion-title>
 
+
+
     <ion-thumbnail slot="end" *ngIf="auth.user | async as user; else showLogin">
       <img src="{{user.photoURL}}" alt="{{user.displayName}}" routerLink="/profile">
     </ion-thumbnail>
@@ -19,9 +21,19 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-img src="assets/Sem título.png" alt="Erro 404"></ion-img>
+
 <ion-content class="ion-padding-horizontal">
 
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam id, esse minima maiores quo quam modi unde
-    corrupti dolores cupiditate, accusamus ipsam officia harum repellat officiis nisi numquam atque odit?</p>
-
+  <p>
+    O aplicativo EME é um aplicativo desenvolvido com a finalidade de informar os seus usuários os acontecimentos mais 
+    importantes de mundo.<br>
+    Nele voce encontrará notícias sobre esporte, empregos, lazer, culinária, automotivos e muito mais! 
+    <br>
+    <br>
+    <b>
+    Desenvoltido por <br> Rodolfo Ferrari 
+    </b>
+  </p>
+  <ion-img src="assets/12.png"  class="logotipo"></ion-img>
 </ion-content>
