@@ -101,7 +101,11 @@ const routes: Routes = [
     path: '**',
     loadChildren: () =>
       import('./page/e404/e404.module').then((m) => m.E404PageModule),
+  },  {
+    path: 'usuario-cadastro',
+    loadChildren: () => import('./pages/usuario-cadastro/usuario-cadastro.module').then( m => m.UsuarioCadastroPageModule)
   },
+
 ];
 
 @NgModule({

@@ -19,15 +19,30 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding-horizontal">
 
-  <div class="header-img">
-    <ion-icon name="log-in-outline"></ion-icon>
+<ion-content padding class=”loginPage” scroll=”false”>
+  <ion-list>
+
+    <div  >
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)] = "nome"></ion-input>
+    </ion-item>
   </div>
-  <p>Logue-se para ter acesso ao nosso conteúdo exclusivo.</p>
-  <ion-button (click)="login()" expand="block" color="primary">
-    <ion-icon name="logo-google" slot="start"></ion-icon>
-    Entrar com o Google
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" [(ngModel)] = "senha"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button fill="solid" expand="block" color="primary" (click)="login()">Logar</ion-button>
+  <ion-button fill="outline" expand="block" color="success" (click)="encaminharRegister()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Fazer cadastro
   </ion-button>
 
+  
 </ion-content>
+
