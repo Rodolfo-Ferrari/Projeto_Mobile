@@ -112,8 +112,6 @@ export class ContactsPage implements OnInit {
       this.pipe.transform(Date.now(), 'yyyy-MM-dd HH:mm:ss').trim()
     );
 
-    console.log(this.contactForm.value);
-
     // Salva em um novo documento do Firebase Firestore
     this.afs
       .collection('contacts')
@@ -122,7 +120,11 @@ export class ContactsPage implements OnInit {
         // Mostra feedback
         this.presentAlert();
       })
-      .catch();
+      .catch(
+        (error) => {
+          console.error(`Erro ao enviar contato: ${error}`);
+        }
+      );
   }
 
   // Feedback
